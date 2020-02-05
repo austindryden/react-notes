@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Searchbar({searchText}){
+function Searchbar({searchText, handleChange}){
     return(<React.Fragment>
-    <input type="text" value={searchText} />
+    <input value={searchText} placeholder="search bar" onChange={(event)=> handleChange(event.target.value)} />
     </React.Fragment>)
 }
 

@@ -1,10 +1,17 @@
 import React from 'react';
 import NotesListItem from "./NotesListItem";
 
-function NotesList(){
+function NotesList({notes, clickHandlerer}){
+
     return(<React.Fragment>
-    <h1>NotesList!!</h1>
-    <NotesListItem />
+        <ul>
+    {notes.map(note => {
+        return(
+            <li onClick={(() => clickHandlerer(note.id))}><NotesListItem title={note.title} id={note.id} key={note.id}/></li>
+        )
+    }).reverse()}
+    </ul>
+    {/* <NotesListItem /> */}
     </React.Fragment>)
 }
 
